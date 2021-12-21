@@ -1,0 +1,67 @@
+{
+  "name": "abhishek-deshmukh-api",
+  "version": "1.0.0",
+  "description": "abhishek-deshmukh-api codebase",
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "vscodePreLaunchTask": "tsc",
+    "heroku-logs": "heroku logs -t --app abhishek-deshmukh-api",
+    "tslint": "tslint --fix -c ./tslint.json 'src/**/*{.ts,.tsx}'",
+    "frontend": "cd ../abhishek-deshmukh && ng s -o",
+    "npm:update": "npm update"
+  },
+  "author": "Abhishek Deshmukh",
+  "license": "ISC",
+  "engines": {
+    "node": "14.17.0",
+    "npm": "6.14.13"
+  },
+  "_moduleAliases": {
+    "@constants": "dist/config/strings/constants.js",
+    "@environment": "dist/config/strings/environment.js",
+    "@utils": "dist/utils",
+    "@config": "dist/config",
+    "@modules": "dist/modules",
+    "@models": "dist/models"
+  },
+  "dependencies": {
+    "@sentry/node": "^5.30.0",
+    "aws-sdk": "2.713.0",
+    "bcryptjs": "^2.4.3",
+    "compression": "1.7.4",
+    "express": "4.17.1",
+    "googleapis": "^52.1.0",
+    "helmet": "3.23.3",
+    "jsonwebtoken": "^8.3.0",
+    "module-alias": "^2.2.2",
+    "mongoose": "^5.13.13",
+    "morgan": "^1.10.0",
+    "multer": "1.4.2",
+    "multer-s3": "2.9.0",
+    "nodemailer": "^6.7.2",
+    "sharedcount-sdk": "^1.1.0",
+    "web-push": "^3.4.5"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/compression": "1.7.0",
+    "@types/express": "4.17.7",
+    "@types/helmet": "0.0.47",
+    "@types/jsonwebtoken": "^8.5.6",
+    "@types/mongoose": "5.10.4",
+    "@types/morgan": "^1.9.3",
+    "@types/multer": "1.3.7",
+    "@types/multer-s3": "2.7.7",
+    "@types/node": "14.0.22",
+    "@types/nodemailer": "6.4.0",
+    "@types/web-push": "^3.3.2",
+    "tslint": "^6.1.3",
+    "tslint-clean-code": "^0.2.10",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-config-security": "^1.16.0",
+    "tslint-html-report": "^2.2.0",
+    "tslint-sonarts": "^1.9.0",
+    "typescript": "3.9.6"
+  }
+}
