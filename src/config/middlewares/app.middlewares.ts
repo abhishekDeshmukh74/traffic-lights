@@ -17,19 +17,13 @@ export class Middlewares {
 
   private init(app: Application) {
 
-    this.initSentry(app);
-
     this.initHelmet(app);
 
     this.initLogger(app);
 
     this.initBodyParser(app);
 
-    // this.connectToDatabase();
-
     this.setupAccessControlHeaders(app);
-
-    this.initSentryErrorHandler(app);
 
     this.handleUncaughtErrors();
 
@@ -45,18 +39,9 @@ export class Middlewares {
     app.use(morgan('dev'));
   }
 
-  initSentry(app: Application) {
-    init({ dsn: CONSTANTS.SENTRY_DSN });
-    app.use(Handlers.requestHandler() as RequestHandler);
-  }
-
   initBodyParser(app: Application) {
     app.use(json({ limit: CONSTANTS.BODY_PARSER_LIMIT }), requestBodyHandler);
     app.use(urlencoded({ limit: CONSTANTS.BODY_PARSER_LIMIT, extended: true }));
-  }
-
-  connectToDatabase() {
-    new MongoDB(ENVIRONMENT.MONGODB_URL);
   }
 
   setupAccessControlHeaders(app: Application) {
